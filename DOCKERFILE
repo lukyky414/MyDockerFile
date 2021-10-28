@@ -1,3 +1,4 @@
-FROM jupyteronopenshift/s2i-minimal-notebook-py35
+FROM quay.io/jupyteronopenshift/s2i-minimal-notebook-py35
 USER root
-RUN useradd jupyter -u 1000810000 -g users
+RUN useradd jupyter -u 1000810000 \
+ && chown -R jupyter /home/jovyan
